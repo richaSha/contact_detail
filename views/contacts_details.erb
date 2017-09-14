@@ -1,0 +1,22 @@
+<a href="/">GO Back<a>
+<h1><%= @lists[@id].first_name %> <%= @lists[@id].last_name %></h1>
+<p><%=@lists[@id].company %></p>
+<p> <%= @lists[@id].job_title%></p>
+<p><%=@lists[@id].contact[:contact_type] %></p>
+<p><%=@lists[@id].contact[:contact_no] %></p>
+<p><%=@lists[@id].contact[:contact_details] %></p>
+
+<form class="" action="/edit/<%= @id %>" method="post">
+
+  <div class="input-group">
+    <select class="form-control" id="sel1" name="edit_details_name">
+      <option>First Name </option>
+      <option>Last Name</option>
+      <option>Company</option>
+      <option>Job Title </option>
+    </select>
+    <input type="text" class="form-control" name="edit_details_value" placeholder="New Detail">
+  </div>
+  <br>
+   <button type="submit" id="edit_button" class="btn btn-success">Edit</button>
+</form>

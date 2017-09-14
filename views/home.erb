@@ -1,0 +1,48 @@
+<form action="/" method="post">
+  <div class="input-group">
+    <span class="input-group-addon">First Name</span>
+    <input type="text" class="form-control" name="first_name" placeholder="First Name">
+  </div>
+  <br>
+  <div class="input-group">
+    <span class="input-group-addon">Last Name</span>
+    <input type="text" class="form-control" name="last_name" placeholder="Last Name">
+  </div>
+  <br>
+  <div class="input-group">
+    <span class="input-group-addon">Company</span>
+    <input type="text" class="form-control" name="company" placeholder="Company Name">
+  </div>
+  <br>
+  <div class="input-group">
+    <span class="input-group-addon">Job Title</span>
+    <input type="text" class="form-control" name="job_title" placeholder="Job Title">
+  </div>
+  <br>
+  <div class="input-group">
+    <span class="input-group-addon">Contact Type</span>
+      <select class="form-control" id="sel1" name="contact_type">
+        <option>Home</option>
+        <option>Office</option>
+        <option>Celphone</option>
+      </select>
+  </div>
+  <br>
+  <div class="input-group">
+    <span class="input-group-addon">Contact No</span>
+    <input type="text" class="form-control" name="contact_no" placeholder="Contact Number">
+  </div>
+  <br>
+  <div class="input-group">
+   <span class="input-group-addon">Contact Details</span>
+   <textarea class="form-control" rows="5" name="contact_details"></textarea>
+ </div>
+ <br>
+  <button type="submit" id="submit_button" class="btn btn-success">Submit</button>
+</form>
+<h2>Contact List</h2>
+<ul>
+  <% @lists.each do |list| %>
+    <li><a href="contact/<%= list.id %>"><%= list.first_name %> <%= list.last_name %></a></li>
+  <% end %>
+</ul>
